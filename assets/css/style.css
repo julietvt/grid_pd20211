@@ -38,19 +38,26 @@ justify-content
   display: grid;
   grid: 100px 1fr 100px / 1fr 4fr 1fr;
   grid-template-areas:
-    'header header header'
+    'area_header area_header area_header'
     'menubar content sidebar'
-    'footer footer footer';
+    'myfooter myfooter myfooter';
 }
 
+/*
 .header {
   background-color: yellow;
   grid-area: header;
 }
+*/
+
+header {
+  grid-area: area_header;
+  background-color: hotpink;
+}
 
 .footer {
   background-color: orangered;
-  grid-area: footer;
+  grid-area: myfooter;
 }
 
 .menubar {
