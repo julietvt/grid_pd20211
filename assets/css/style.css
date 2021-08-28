@@ -1,76 +1,39 @@
-/*
-количество строк и столбцов 
- grid-template-rows: repeat(3, 100px);
-grid-template-columns: repeat(4, 100px);
-или
-обощеное свойство grid: repeat(3, 100px) / repeat(4, 100px)
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  --primary-color: white;
+  --secondary-color: black;
+  --bg-article-primary-color: #333;
+  --bg-article-secondary-color: #2690d4;
+}
 
-100px , 10em, ...
-1fr подобно коэфициенту, место в контейнере
-auto 
-
-поля между элементами
-grid-column-gap
-grid-row-gap
-или обощенное gap
-
-
-расположение элементов 
-grid-column-start и grid-column-end
-grid-row-start и grid-row-end
-или обобщающие 
-grid-row
-grid-column
-
-обьединяет два свойство 
-grid-aria: старт_строка / старт_столб / кон_строка / кон_столб
-
-размещение
-justify-items
-align-items
-justify-content
-
-*/
-
-.container {
-  width: 100%;
-  height: 100vh;
+body {
   display: grid;
-  grid: 100px 1fr 100px / 1fr 4fr 1fr;
-  grid-template-areas:
-    'area_header area_header area_header'
-    'menubar content sidebar'
-    'myfooter myfooter myfooter';
+  color: var(--primary-color);
 }
 
-/*
-.header {
-  background-color: yellow;
-  grid-area: header;
+.bg-image {
+  background-image: url('../img/back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 450px;
+  z-index: -1;
+  opacity: 0.7;
+  position: absolute;
 }
-*/
 
 header {
-  grid-area: area_header;
-  background-color: hotpink;
+  min-height: 450px;
 }
 
-.footer {
-  background-color: orangered;
-  grid-area: myfooter;
-}
-
-.menubar {
-  background-color: blue;
-  grid-area: menubar;
-}
-
-.sidebar {
-  background-color: blueviolet;
-  grid-area: sidebar;
-}
-
-.content {
-  background-color: darkcyan;
-  grid-area: content;
+.wrapper {
+  display: grid;
+  grid: repeat(3, 1fr) / 1fr;
+  align-items: center;
+  justify-items: center;
+  padding-top: 100px;
 }
